@@ -1,0 +1,14 @@
+#root {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--sapBackgroundColor);
+}
+
+.footerNoPadding::part(footer) {
+  padding-inline: 0;
+}
+
+.contentNoPadding::part(content) {
+  padding: 0;
+}
