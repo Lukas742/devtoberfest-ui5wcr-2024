@@ -2,6 +2,7 @@ import {
   List,
   ListMode,
   Popover,
+  PopoverDomRef,
   PopoverPlacementType,
   ShellBar,
   ShellBarItem,
@@ -27,14 +28,14 @@ const themes = [
 
 function App() {
   const navigate = useNavigate();
-  const popoverRef = useRef(null);
+  const popoverRef = useRef<PopoverDomRef>(null);
   const [theme, setThemeState] = useState(defaultTheme);
   const handleLogoClick = () => {
     navigate("/");
   };
   const handleShellBarItemClick = (e) => {
     const { targetRef } = e.detail;
-    popoverRef.current.showAt(targetRef);
+    void popoverRef.current!.showAt(targetRef);
   };
 
   const handleThemeSwitch = (e) => {
@@ -47,7 +48,12 @@ function App() {
     <ThemeContext.Provider value={theme}>
       <ShellBar
         primaryTitle="Movie DB"
-        // logo={<img src="SAPLogo.png" alt="SAP Logo" />}
+        logo={
+          <img
+            src="https://sap.github.io/ui5-webcomponents/img/footer/sap-1920-1440.svg"
+            alt="SAP logo"
+          />
+        }
         onLogoClick={handleLogoClick}
       >
         <ShellBarItem
