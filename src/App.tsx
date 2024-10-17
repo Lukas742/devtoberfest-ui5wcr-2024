@@ -1,12 +1,10 @@
 import {
   List,
-  ListMode,
   Popover,
   PopoverDomRef,
-  PopoverPlacementType,
   ShellBar,
   ShellBarItem,
-  StandardListItem,
+  ListItemStandard,
 } from "@ui5/webcomponents-react";
 import { createContext, useRef, useState } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
@@ -15,6 +13,9 @@ import { Details } from "./Details.tsx";
 import { Home } from "./Home.tsx";
 import paletteIcon from "@ui5/webcomponents-icons/dist/palette.js";
 import { setTheme } from "@ui5/webcomponents-base/dist/config/Theme.js";
+
+import ListMode from "@ui5/webcomponents/dist/types/ListSelectionMode.js";
+import PopoverPlacementType from "@ui5/webcomponents/dist/types/PopoverPlacement.js";
 
 const defaultTheme = "sap_horizon";
 export const ThemeContext = createContext(defaultTheme);
@@ -35,7 +36,8 @@ function App() {
   };
   const handleShellBarItemClick = (e) => {
     const { targetRef } = e.detail;
-    void popoverRef.current!.showAt(targetRef);
+    popoverRef.current!.opener = targetRef;
+    popoverRef.current!.open = true;
   };
 
   const handleThemeSwitch = (e) => {
@@ -70,21 +72,21 @@ function App() {
       </div>
       <Popover
         ref={popoverRef}
-        placementType={PopoverPlacementType.Bottom}
+        placement={PopoverPlacementType.Bottom}
         className="contentNoPadding"
       >
         <List
-          mode={ListMode.SingleSelect}
+          selectionMode={ListMode.Single}
           onSelectionChange={handleThemeSwitch}
         >
           {themes.map((item) => (
-            <StandardListItem
+            <ListItemStandard
               data-key={item.key}
               key={item.key}
               selected={theme === item.key}
             >
               {item.name}
-            </StandardListItem>
+            </ListItemStandard>
           ))}
         </List>
       </Popover>

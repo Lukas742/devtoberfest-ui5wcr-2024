@@ -6,6 +6,8 @@ import App from "./App.tsx";
 import "@ui5/webcomponents-react/dist/Assets";
 import "./index.css";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import "@sap-ui/common-css/dist/sap-content-paddings.css";
+import "@sap-ui/common-css/dist/sap-container-type.css";
 
 const queryClient = new QueryClient();
 

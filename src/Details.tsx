@@ -1,13 +1,9 @@
 import { useQuery } from "@tanstack/react-query";
 
-import personPlaceholder from "@ui5/webcomponents-icons/dist/person-placeholder";
-import pictureIcon from "@ui5/webcomponents-icons/dist/picture";
+import personPlaceholder from "@ui5/webcomponents-icons/dist/person-placeholder.js";
+import pictureIcon from "@ui5/webcomponents-icons/dist/picture.js";
 import {
   Avatar,
-  AvatarShape,
-  AvatarSize,
-  DynamicPageHeader,
-  DynamicPageTitle,
   FlexBox,
   FlexBoxAlignItems,
   FlexBoxDirection,
@@ -46,6 +42,11 @@ import person5 from "./assets/personPictograms/person5.png";
 import person5dark from "./assets/personPictograms/person5_dark.png";
 
 import { revenueFormatter } from "./utils.ts";
+
+import { ObjectPageHeader } from "@ui5/webcomponents-react";
+import { ObjectPageTitle } from "@ui5/webcomponents-react";
+import AvatarShape from "@ui5/webcomponents/dist/types/AvatarShape.js";
+import AvatarSize from "@ui5/webcomponents/dist/types/AvatarSize.js";
 
 interface Actor {
   name: string;
@@ -125,18 +126,19 @@ export const Details = () => {
             )}
           </Avatar>
         }
-        headerTitle={
-          <DynamicPageTitle
+        titleArea={
+          <ObjectPageTitle
             header={data?.title}
             subHeader={
               data?.revenue && (
                 <>
-                  <Label showColon>Revenue</Label>{" "}
+                  <Label showColon wrappingType="None">
+                    Revenue
+                  </Label>{" "}
                   <Text>{revenueFormatter.format(data.revenue)}</Text>
                 </>
               )
             }
-            showSubHeaderRight={false}
           >
             <RatingIndicator
               readonly
@@ -149,16 +151,17 @@ export const Details = () => {
                   : undefined
               }
             />
-          </DynamicPageTitle>
+          </ObjectPageTitle>
         }
-        headerContent={
-          <DynamicPageHeader>
+        headerArea={
+          <ObjectPageHeader>
             <FlexBox direction={FlexBoxDirection.Column}>
-              <Link>Official Trailer</Link>
-              <Link>Buy Online</Link>
+              <Link wrappingType="None">Official Trailer</Link>
+              <Link wrappingType="None">Buy Online</Link>
             </FlexBox>
-          </DynamicPageHeader>
+          </ObjectPageHeader>
         }
+        hidePinButton
       >
         <ObjectPageSection id="summary" titleText="Summary">
           <Text>{data?.summary}</Text>
@@ -180,7 +183,7 @@ export const Details = () => {
                   >
                     {item.name}
                   </Text>
-                  <Label>{item.character}</Label>
+                  <Label wrappingType="None">{item.character}</Label>
                 </FlexBox>
               </FlexBox>
             ))}
@@ -205,7 +208,7 @@ export const Details = () => {
                   icon={personPlaceholder}
                 >
                   <FlexBox direction={FlexBoxDirection.Column}>
-                    <Text renderWhitespace>{item.comment}</Text>
+                    <Text>{item.comment}</Text>
                     {item.rating && (
                       <RatingIndicator value={item.rating} readonly />
                     )}
