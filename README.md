@@ -1,41 +1,30 @@
-# React + TypeScript + Vite
+# Devtoberfest UI5 Web Components for React 2024
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repository includes the codemod demo shown in the 2024 Devtoberfest session, [What's New in UI5 Web Components 2.0 and UI5 Web Components for React 2.0](https://www.youtube.com/watch?v=lvpN3eK39h8).
 
-Currently, two official plugins are available:
+## Setup
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The repository has two branches:
 
-## Expanding the ESLint configuration
+- `main`: The pre-migration branch, which uses `@ui5/webcomponents-react@~1.29.11` & `@ui5/webcomponents@~1.24.11`.
+- `migration`: The post-migration branch, as shown in the Devtoberfest session, using `@ui5/webcomponents-react@2.3.0` & `@ui5/webcomponents@2.2.0`.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
-
-# Setup
-
-__Install all modules__
+Install dependencies:
 
 ```sh
 npm i
 ```
 
-__Start dev server__
+Start the development server:
 
 ```sh
 npm run dev
 ```
+
+## Resources
+
+- [2024 Devtoberfest session](https://www.youtube.com/watch?v=lvpN3eK39h8)
+- [UI5 Web Components for React repository](https://github.com/SAP/ui5-webcomponents-react)
+- [UI5WCR Migration Guide & documentation](https://sap.github.io/ui5-webcomponents-react/v2/?path=/docs/migration-guide--docs)
+- [UI5 Web Components repository](https://github.com/SAP/ui5-webcomponents)
+- [UI5WC Migration Guide & documentation](https://sap.github.io/ui5-webcomponents/docs/migration-guides/to-version-2/)
