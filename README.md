@@ -24,6 +24,7 @@ npm run dev
 ## Resources
 
 - [2024 Devtoberfest session](https://www.youtube.com/watch?v=lvpN3eK39h8)
+- [2023 UI5WCR Devtoberfest session](https://www.youtube.com/watch?v=zyOxgjoSnGw)
 - [UI5 Web Components for React repository](https://github.com/SAP/ui5-webcomponents-react)
 - [UI5WCR Migration Guide & documentation](https://sap.github.io/ui5-webcomponents-react/v2/?path=/docs/migration-guide--docs)
 - [UI5 Web Components repository](https://github.com/SAP/ui5-webcomponents)
