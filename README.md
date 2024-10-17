@@ -28,6 +28,7 @@ npm run dev
 - [UI5WCR Migration Guide & documentation](https://sap.github.io/ui5-webcomponents-react/v2/?path=/docs/migration-guide--docs)
 - [UI5 Web Components repository](https://github.com/SAP/ui5-webcomponents)
 - [UI5WC Migration Guide & documentation](https://sap.github.io/ui5-webcomponents/docs/migration-guides/to-version-2/)
+- [Common CSS documentation](https://sap.github.io/fundamental-styles/?path=/docs/common-css-introduction--docs)
 
 Codemod ([link](https://sap.github.io/ui5-webcomponents-react/v2/?path=/docs/migration-guide--docs#codemod)):
 ```sh
