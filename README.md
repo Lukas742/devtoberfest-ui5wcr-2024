@@ -1,4 +1,4 @@
-# Devtoberfest UI5 Web Components for React 2024
+# Devtoberfest 2024 - UI5 Web Components for React Demo App
 
 This repository includes the codemod demo shown in the 2024 Devtoberfest session, [What's New in UI5 Web Components 2.0 and UI5 Web Components for React 2.0](https://www.youtube.com/watch?v=lvpN3eK39h8).
 
